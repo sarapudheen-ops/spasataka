@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remote start system ready"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnCheckReadiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Vehicle Readiness"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnStartEngine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Engine"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnStopEngine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Engine"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Engine Status"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚠️ WARNING: Remote start should only be used in emergency situations. Ensure vehicle is in a safe location before starting."
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/background_light"
+        android:padding="8dp" />
+
+</LinearLayout>

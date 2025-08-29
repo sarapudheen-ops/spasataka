@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Include all shared preferences except sensitive ones -->
+        <include domain="sharedpref" path="."/>
+        <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+        
+        <!-- Include all databases -->
+        <include domain="database" path="."/>
+        
+        <!-- Include all files in the app's data directory -->
+        <include domain="file" path="."/>
+        
+        <!-- Include all files in the app's external files directory -->
+        <include domain="external" path="."/>
+    </cloud-backup>
+    
+    <device-transfer>
+        <!-- Include all shared preferences except sensitive ones -->
+        <include domain="sharedpref" path="."/>
+        <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+        
+        <!-- Include all databases -->
+        <include domain="database" path="."/>
+        
+        <!-- Include all files in the app's data directory -->
+        <include domain="file" path="."/>
+        
+        <!-- Include all files in the app's external files directory -->
+        <include domain="external" path="."/>
+    </device-transfer>
+</data-extraction-rules>

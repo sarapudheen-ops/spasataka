@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 🔑 Core Bluetooth & OBD-II Permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Android 12+ specific permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Location permissions for Bluetooth scanning -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Foreground service permissions (Android 9+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+
+    <!-- Network permissions for Wi-Fi OBD adapters -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- Storage permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" 
+        tools:ignore="ScopedStorage" />
+
+    <!-- Wake lock for maintaining connections -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Vibration for alerts -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 🔧 Hardware Features -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <application
+        android:name=".SpaceTecApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SpaceTec"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        tools:targetApi="31">
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.SpaceTec.AppCompat"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        
+        <activity
+            android:name=".ui.LiveDataActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+        <activity
+            android:name=".ui.BluetoothConnectionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.AutelTestActivity"
+            android:theme="@style/Theme.SpaceTec.AppCompat"
+            android:exported="false" />
+        <activity
+            android:name=".ui.VehicleSelectionActivity"
+            android:theme="@style/Theme.SpaceTec.AppCompat"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.DiagnosticsActivity"
+            android:exported="false"
+            android:label="Diagnostics"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.RemoteStartActivity"
+            android:exported="false"
+            android:label="Remote Start"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.EcuFlashingActivity"
+            android:exported="false"
+            android:label="ECU Flashing"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.QuickScanActivity"
+            android:exported="false"
+            android:label="Quick Scan"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.VehicleInfoActivity"
+            android:exported="false"
+            android:label="Vehicle Info"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:label="Settings"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.HelpActivity"
+            android:exported="false"
+            android:label="Help"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.AboutActivity"
+            android:exported="false"
+            android:label="About"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.ServiceResetActivity"
+            android:exported="false"
+            android:label="Service Reset"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <activity
+            android:name=".ui.DataLoggerActivity"
+            android:exported="false"
+            android:label="Data Logger"
+            android:theme="@style/Theme.SpaceTec.AppCompat" />
+
+        <!-- 🔧 Foreground Service for OBD Connection -->
+        <service
+            android:name=".connection.ObdConnectionService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+
+    </application>
+</manifest>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Dashboard" />
+        
+        <item
+            android:id="@+id/nav_vehicle_selection"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Vehicle Selection" />
+        
+        <item
+            android:id="@+id/nav_quick_scan"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Quick Scan" />
+        
+        <item
+            android:id="@+id/nav_live_data"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Live Data" />
+        
+        <item
+            android:id="@+id/nav_dtc_codes"
+            android:icon="@android:drawable/ic_menu_report_image"
+            android:title="DTC Codes" />
+        
+        <item
+            android:id="@+id/nav_service_reset"
+            android:icon="@android:drawable/ic_menu_revert"
+            android:title="Service Reset" />
+        
+        <item
+            android:id="@+id/nav_adas"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="ADAS Calibration" />
+        
+        <item
+            android:id="@+id/nav_tpms"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="TPMS Service" />
+        
+        <item
+            android:id="@+id/nav_3d_visualization"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="3D Visualization" />
+        
+        <item
+            android:id="@+id/nav_data_logger"
+            android:icon="@android:drawable/ic_menu_save"
+            android:title="Data Logger" />
+    </group>
+    
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Settings" />
+            
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="Help" />
+            
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="About" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/surface_container"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/md_theme_outline_variant">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with PID Name and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvPidIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvPidName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Thruster Power"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_theme_on_surface" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPidStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVE"
+                android:textSize="10sp"
+                app:chipBackgroundColor="@color/success"
+                app:chipCornerRadius="8dp"
+                app:chipMinHeight="20dp"
+                app:textStartPadding="6dp"
+                app:textEndPadding="6dp" />
+
+        </LinearLayout>
+
+        <!-- Value Display -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvPidValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,450"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_theme_primary"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tvPidUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RPM"
+                android:textSize="14sp"
+                android:textColor="@color/md_theme_on_surface_variant"
+                android:layout_marginStart="8dp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvPidTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:34:56"
+                android:textSize="12sp"
+                android:textColor="@color/md_theme_on_surface_variant"
+                android:fontFamily="monospace" />
+
+        </LinearLayout>
+
+        <!-- Progress Bar for Visual Representation -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressPidValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="65"
+            android:max="100"
+            app:indicatorColor="@color/md_theme_primary"
+            app:trackColor="@color/md_theme_primary_container"
+            app:trackThickness="4dp"
+            app:trackCornerRadius="2dp" />
+
+        <!-- Additional Info Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvPidRange"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Range: 0-8000"
+                android:textSize="11sp"
+                android:textColor="@color/md_theme_on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvPidFrequency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1Hz"
+                android:textSize="11sp"
+                android:textColor="@color/md_theme_tertiary"
+                android:background="@drawable/bg_frequency_badge"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

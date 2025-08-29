@@ -1,0 +1,30 @@
+{
+  "BMW": [
+    "1 Series (E81/E82/E87/E88, F20/F21)",
+    "3 Series (E36, E46, E90, F30, G20)",
+    "5 Series (E34, E39, E60, F10, G30)",
+    "7 Series (E38, E65, F01, G11)",
+    "X1", "X3", "X5", "X6",
+    "Z3", "Z4", "Z8",
+    "M3", "M5", "M6"
+  ],
+  "Toyota": [
+    "Corolla (E90–E210)",
+    "Camry (XV10–XV70)",
+    "Hilux",
+    "Land Cruiser (80–200 series)",
+    "Prius",
+    "RAV4",
+    "Yaris"
+  ],
+  "Mercedes-Benz": [
+    "A-Class (W168, W169, W176, W177)",
+    "C-Class (W202, W203, W204, W205)",
+    "E-Class (W210, W211, W212, W213)",
+    "S-Class (W220, W221, W222, W223)",
+    "G-Class (W463)",
+    "Sprinter",
+    "Vito",
+    "Viano"
+  ]
+}
